@@ -15,6 +15,7 @@ const fortunes = [
     "Your resemblance to a muppet will prevent the world from taking you seriously",
     "You will be hungry again in one hour."
 ];
+let index = 0;
 
 // function hello() {
 //     console.log('Hello addEventListener!');
@@ -25,8 +26,14 @@ const fortunes = [
 // - a function that says what to do when the event happens
 triggerElement.addEventListener('click', function () {
     console.log('Hello addEventListener!');
-    const newFortune = fortunes.pop();
+    // const newFortune = fortunes.pop();
+    const newFortune = fortunes[index];
     outputElement.textContent = newFortune;
+    index++;
+    if (index > fortunes.length - 1) {
+        index = 0;
+    }
+    // index = index + 1;
 });
 
 // This works, but is not the most modular approach.
