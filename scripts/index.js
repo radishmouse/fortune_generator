@@ -8,6 +8,14 @@ console.log('yep i am here');
 const triggerElement = document.querySelector('[data-trigger]');
 const outputElement = document.querySelector('[data-output]');
 
+const fortunes = [
+    "You laugh now, wait til you get home.",
+    "Fortune not found: Abort, Retry, Ignore?",
+    "About time I got out of that cookie.",
+    "Your resemblance to a muppet will prevent the world from taking you seriously",
+    "You will be hungry again in one hour."
+];
+
 // function hello() {
 //     console.log('Hello addEventListener!');
 // }
@@ -17,7 +25,8 @@ const outputElement = document.querySelector('[data-output]');
 // - a function that says what to do when the event happens
 triggerElement.addEventListener('click', function () {
     console.log('Hello addEventListener!');
-    outputElement.textContent = "la la la la la la lalalalala";
+    const newFortune = fortunes.pop();
+    outputElement.textContent = newFortune;
 });
 
 // This works, but is not the most modular approach.
@@ -35,3 +44,4 @@ triggerElement.addEventListener('click', function () {
 // #3 Pull text from an array
 // of text to write to the
 // page.
+
