@@ -14,8 +14,10 @@ const jokes = [
   "This graveyard looks overcrowded. People must be dying to get in there.",
   "Want to hear a joke about construction? I'm still working on it."
 ];
+index = 0;
 // ****************************************************************************
-// function hello() {
+// OLD VERSION
+//  function hello() {
 //   console.log("Hello addEventListener");
 // }
 // *****************************************************************************
@@ -24,7 +26,13 @@ const jokes = [
 //- a function that says what to do when the event happens
 triggerElement.addEventListener("click", function() {
   console.log("Hello addEventListener");
-  outputElement.textContent = jokes.pop();
+  //   outputElement.textContent = jokes.pop();
+  const newJoke = jokes[index];
+  outputElement.textContent = newJoke;
+  index++;
+  if (index > jokes.length - 1) {
+    index = 0;
+  }
 });
 
 // *****************************************************************************
