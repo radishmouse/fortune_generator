@@ -5,7 +5,7 @@ console.log('yep i am here');
 
 // #1 Make some code run
 // when I click the button
-const triggerElement = document.querySelector();
+const triggerElement = document.querySelector('[data-trigger]');
 
 
 // #2 Write some text to the
