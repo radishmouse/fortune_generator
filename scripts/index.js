@@ -5,7 +5,7 @@ console.log('yep i am here');
 
 // #1 Make some code run
 // when I click the button
-const triggerElement = document.querySelector('[data-trigger]');
+// const triggerElement = document.querySelector('[data-trigger]');
 const outputElement = document.querySelector('[data-output]');
 
 const fortunes = [
@@ -20,7 +20,20 @@ let index = 0;
 function createFortuneButton() {
     const theButton = document.createElement('button');
     theButton.textContent = 'Click here for a fortune';
-    theButton.setAttribute('data-trigger', '');
+    // theButton.setAttribute('data-trigger', '');
+
+    theButton.addEventListener('click', function () {
+        console.log('Hello addEventListener!');
+        // const newFortune = fortunes.pop();
+        const newFortune = fortunes[index];
+        outputElement.textContent = newFortune;
+        index++;
+        if (index > fortunes.length - 1) {
+            index = 0;
+        }
+        // index = index + 1;
+    });
+
     return theButton;
 }
 
@@ -35,6 +48,8 @@ function createButtonContainer() {
     return buttonContainer;
 }
 
+document.body.appendChild(createButtonContainer());
+
 
 // function hello() {
 //     console.log('Hello addEventListener!');
@@ -43,14 +58,16 @@ function createButtonContainer() {
 // addEventListener accepts 2 arguments:
 // - a string that identifies the kind of event to listen for
 // - a function that says what to do when the event happens
-triggerElement.addEventListener('click', function () {
-    console.log('Hello addEventListener!');
-    // const newFortune = fortunes.pop();
-    const newFortune = fortunes[index];
-    outputElement.textContent = newFortune;
-    index++;
-    if (index > fortunes.length - 1) {
-        index = 0;
-    }
-    // index = index + 1;
-});
+
+
+// triggerElement.addEventListener('click', function () {
+//     console.log('Hello addEventListener!');
+//     // const newFortune = fortunes.pop();
+//     const newFortune = fortunes[index];
+//     outputElement.textContent = newFortune;
+//     index++;
+//     if (index > fortunes.length - 1) {
+//         index = 0;
+//     }
+//     // index = index + 1;
+// });
