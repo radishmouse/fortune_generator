@@ -17,6 +17,25 @@ const fortunes = [
 ];
 let index = 0;
 
+function createFortuneButton() {
+    const theButton = document.createElement('button');
+    theButton.textContent = 'Click here for a fortune';
+    theButton.setAttribute('data-trigger', '');
+    return theButton;
+}
+
+function createButtonContainer() {
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('buttonContainer');
+
+    // const theButton = createFortuneButton();
+    // buttonContainer.appendChild(theButton);
+    buttonContainer.appendChild(createFortuneButton());
+
+    return buttonContainer;
+}
+
+
 // function hello() {
 //     console.log('Hello addEventListener!');
 // }
@@ -35,20 +54,3 @@ triggerElement.addEventListener('click', function () {
     }
     // index = index + 1;
 });
-
-// This works, but is not the most modular approach.
-// triggerElement.onclick = function () {
-//     // all right here in this function
-//     doThing1();
-//     doThing2();
-//     doThing3();
-// }
-
-// #2 Write some text to the
-// page on button click
-
-
-// #3 Pull text from an array
-// of text to write to the
-// page.
-
